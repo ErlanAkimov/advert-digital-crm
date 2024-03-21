@@ -1,0 +1,109 @@
+.wrapper {
+	width: 250px;
+	min-width: 250px;
+	background-color: #fff;
+	padding: 50px 20px;
+	position: fixed;
+	z-index: 50;
+	top: 0;
+	height: 100vh;
+}
+
+.logo {
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.title {
+	user-select: none;
+	text-transform: uppercase;
+	font-size: 32px;
+	font-weight: 900;
+	line-height: 22px;
+	font-family: 'Passion One', sans-serif;
+
+	span {
+		margin-left: 20px;
+		font-family: 'Passion One', sans-serif;
+		color: var(--pink);
+	}
+}
+
+.subtitle {
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.nav {
+	margin-top: 20px;
+	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 5px;
+	border-top: 1px solid rgb(190, 190, 190);
+
+	&__item {
+		padding: 10px 10px;
+		cursor: pointer;
+		font-size: 15px;
+		line-height: 15px;
+		font-weight: 600;
+		width: 100%;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		column-gap: 10px;
+		transition: 0.2s ease-in-out;
+		border: 1px solid white;
+
+		&:hover {
+			background-color: #f0f0f0;
+		}
+
+		.icon {
+			min-width: 14px;
+		}
+	}
+	&__item2 {
+		background-color: blue;
+		color: white;
+
+		&:hover {
+			background-color: blue;
+			color: white;
+		}
+	}
+
+	.active {
+		border: 1px solid #c0c0c0;
+		transition: 0.2s ease-in-out;
+	}
+}
+
+.menu {
+	position: absolute;
+	top: 20px;
+	right: -40px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(207, 207, 207);
+	border-left: none;
+	width: 40px;
+	height: 40px;
+	border-radius: 0 5px 5px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-right: 4px;
+	display: none;
+}
+
+@media screen and (max-width: 1919px) {
+	.menu {
+		display: flex;
+	}
+	.wrapper {
+		transition: 0.2s ease-in-out;
+		left: -250px;
+		border-right: 1px solid rgb(207, 207, 207);
+	}
+}

@@ -1,0 +1,162 @@
+.header {
+	background-image: var(--gradient);
+	width: 100%;
+}
+
+.wrapper {
+	max-width: var(--default-width);
+	padding-inline: 50px;
+	height: 50px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+
+	h1 {
+		font-size: 22px;
+		color: white;
+		line-height: 18px;
+		font-weight: 600;
+
+		span {
+			font-size: 13px;
+			color: rgb(228, 228, 228);
+		}
+	}
+
+	nav {
+		margin-left: 50px;
+		display: flex;
+		align-items: center;
+		column-gap: 20px;
+
+		a {
+			cursor: pointer;
+			height: 18px;
+			font-size: 15px;
+			font-weight: 500;
+			color: #f0f0f0;
+			transition: text-shadow 0.2s ease-in-out;
+
+			&:hover {
+				text-shadow: 0 0px 10px white;
+				color: #ffffff;
+			}
+		}
+
+		.active {
+			text-shadow: 0 0px 10px white;
+			color: #ffffff;
+		}
+	}
+}
+
+.left {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
+
+.right {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.langSwitcher {
+	border: 1px solid white;
+	color: white;
+	width: 40px;
+	height: 26px;
+	border-radius: 4px;
+	cursor: pointer;
+	text-transform: uppercase;
+
+	&:hover {
+		box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.avatar {
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+	border-radius: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.account {
+	border-radius: 10px;
+	width: 280px;
+	backdrop-filter: blur(6px);
+	background-color: #ffffff2a;
+	border: 1px solid #dadada;
+	position: absolute;
+	right: 30px;
+	bottom: -10px;
+	transform: translateY(100%);
+	padding: 20px 30px;
+	z-index: 80;
+
+	.country {
+		font-size: 14px;
+		font-weight: 600;
+	}
+}
+
+.logout {
+	width: 100%;
+	background-image: var(--gradient);
+	transition: 0.3s ease-in-out;
+	color: white;
+	font-weight: 600;
+	font-size: 15px;
+	border-radius: 5px;
+	margin-top: 20px;
+	padding: 10px;
+	cursor: pointer;
+	background-size: 100%;
+
+	&:hover {
+		background-size: 400%;
+	}
+}
+
+@media screen and (max-width: 1219px) {
+	.wrapper {
+		padding-inline: 10px;
+		height: 40px;
+
+		h1 {
+			font-size: 16px;
+		}
+
+		nav {
+			display: none;
+		}
+	}
+
+	.right {
+		gap: 10px;
+	}
+
+	.avatar {
+		width: 30px;
+		height: 30px;
+	}
+
+	.langSwitcher {
+		height: 20px;
+		width: 30px;
+	}
+}

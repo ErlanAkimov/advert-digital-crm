@@ -1,0 +1,137 @@
+.wrapper {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px rgb(245, 245, 245);
+    padding: 20px;
+    position: relative;
+    display: grid;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.names {
+    width: 200px;
+}
+
+.country {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(153, 153, 153);
+    margin-top: -5px;
+}
+
+.phone {
+    width: 200px;
+    display: flex;
+    column-gap: 10px;
+}
+
+.id {
+    position: absolute;
+    top: 10px; 
+    right: 20px;
+    font-size: 14px;
+    color: rgb(168, 168, 168);
+    font-weight: 300;
+}
+.native {
+    width: 100px;
+}
+
+.other {
+    width: 200px;
+}
+
+.date {
+    display: flex;
+    column-gap: 10px;
+}
+
+.done {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    right: 20px;
+    padding: 9px;
+    background-color: #232325;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: box-shadow .2s ease-in-out, background-color .1s ease-in-out;
+    &:hover {
+        box-shadow: 0 0 10px 3px rgba(77, 77, 77, 0.3);
+    }
+
+    &:active {
+        background-color: rgb(238, 65, 65);
+        box-shadow: 0 0 10px 3px rgba(32, 32, 32, 0.3)
+    }
+}
+
+.contacts {
+    width: 200px;
+}
+
+@media screen and (max-width: 1219px) {
+    .wrapper {
+        display: grid;
+        padding-bottom: 14px;
+    }
+
+
+    .native {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid rgb(188, 184, 235);
+        padding: 5px 0px;
+    }
+
+    .type {
+        color: rgb(82, 82, 82);
+        font-weight: 300;
+    }
+
+    .other, .contacts {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 0px;
+        border-bottom: 1px solid rgb(188, 184, 235);
+        width: 100%;
+    }
+
+    .country {
+        margin-bottom: 10px;
+    }
+
+    .phone {
+        width: 100%;
+        justify-content: space-between;
+        padding: 5px 0px;
+        border-bottom: 1px solid rgb(188, 184, 235);
+
+        .type {
+            width: 100%;
+        }
+    }
+
+    .date {
+        margin-top: 20px;
+        p {color: rgb(141, 141, 141);}
+        .type {
+            font-weight: 500;
+            color: black;
+        }
+    }
+}
