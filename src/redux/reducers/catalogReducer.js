@@ -10,6 +10,9 @@ const catalogSlice = createSlice({
 	},
 
 	reducers: {
+		getOrderDone: (state, { payload }) => {
+			state.list = state.list.filter((item) => item.id != payload)
+		},
 		setOrdersList: (state, { payload }) => {
 			state.list = payload.list;
 			state.total = payload.total;
@@ -39,5 +42,5 @@ const catalogSlice = createSlice({
 	},
 });
 
-export const { setOrdersList, pushNewComment, searchAction } = catalogSlice.actions;
+export const { setOrdersList, pushNewComment, searchAction, getOrderDone } = catalogSlice.actions;
 export default catalogSlice.reducer;

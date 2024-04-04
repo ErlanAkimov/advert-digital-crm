@@ -32,6 +32,24 @@
 	overflow: hidden;
 	transition: 0.1s ease-in-out;
 
+	.done {
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		height: 100%;
+		width: 30px;
+		background-color: rgb(99, 99, 180);
+		svg {
+			fill: white;
+			margin-top: 7px;
+			width: 16px;
+			height: 16px;
+		}
+	}
+
 	.id {
 		color: rgb(255, 255, 255);
 		font-size: 14px;
@@ -54,15 +72,32 @@
 	.contacts {
 		display: flex;
 		align-items: center;
+		column-gap: 2px;
 		height: 30px;
 		width: 200px;
+	}
+
+	.whatsIconBlock {
+		height: 32px;
+		width: 32px;
+		aspect-ratio: 1;
+		border-radius: 15px;
+		pointer-events: none;
+		overflow: hidden;
+
+		svg {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			fill: #25d366;
+		}
 	}
 
 	.tgIconBlock {
 		height: 24px;
 		aspect-ratio: 1;
 		background-color: #24a1de;
-		border-radius: 5px;
+		border-radius: 2px;
 		pointer-events: none;
 
 		svg {
@@ -127,9 +162,10 @@
 
 	.edit {
 		position: absolute;
-		right: 0px;
+		opacity: 0.6;
+		right: 50px;
 		height: 30px;
-		padding-inline: 20px;
+		padding-inline: 0px;
 		display: flex;
 		align-items: center;
 	}
@@ -422,6 +458,8 @@
 		width: 100%;
 		column-gap: 0px;
 		margin-bottom: 5px;
+		flex-wrap: wrap;
+		row-gap: 10px;
 		p {
 			border: 1px solid rgb(204, 204, 204);
 			padding-inline: 14px;

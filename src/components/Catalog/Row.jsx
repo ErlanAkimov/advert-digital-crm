@@ -8,7 +8,9 @@ import { IoSend } from 'react-icons/io5';
 import { api_url } from '../..';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { pushNewComment } from '../../redux/reducers/catalogReducer';
+import { getOrderDone, pushNewComment } from '../../redux/reducers/catalogReducer';
+import { BiLogoWhatsappSquare } from "react-icons/bi";
+import { IoMdDoneAll } from "react-icons/io";
 
 export const Row = ({ data }) => {
 	const dispatch = useDispatch();
@@ -76,6 +78,11 @@ export const Row = ({ data }) => {
 		}
 	};
 
+	const handleGetItDone = () => {
+		dispatch(getOrderDone(data.id))
+		axios.post(`${api_url}/get-it-done`, { id: data.id, type: data.type}).then((res) => console.log(res.data))
+	}
+
 	if (window.innerWidth > 1219) {
 		return (
 			<div className={styles.row} style={{ maxHeight: maxHeight }}>
@@ -94,8 +101,14 @@ export const Row = ({ data }) => {
 					<div className={`${styles.lang}  ${styles.rowItem}`}>{data.native}</div>
 					<div className={`${styles.lang}  ${styles.rowItem}`}>{data.other}</div>
 					<div className={styles.contacts}>
+						<a href={`https://wa.me/${data.phone}`}>
+							<div className={styles.whatsIconBlock}>
+								<BiLogoWhatsappSquare />
+							</div>
+							</a>
 						<ContactsRecycler contacts={data.contacts} />
 					</div>
+					<button onClick={handleGetItDone} className={styles.done}><IoMdDoneAll /></button>
 					{data.comments.length > 0 && (
 						<div className={styles.edit}>
 							<FaComments />

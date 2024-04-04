@@ -75,7 +75,7 @@ export default function Catalog() {
 							}}
 							className={tab === 'recommend' ? styles.active : null}
 						>
-							RECOMMEND'S
+							RECOMMENDS
 						</p>
 						<p
 							onClick={() => {
@@ -94,6 +94,15 @@ export default function Catalog() {
 							className={tab === 'casting' ? styles.active : null}
 						>
 							CASTING
+						</p>
+						<p
+							onClick={() => {
+								fetchData('cast-recs');
+								setSearchValue('');
+							}}
+							className={tab === 'cast-recs' ? styles.active : null}
+						>
+							CASTING RECOMMENDS
 						</p>
 					</div>
 					<div className={styles.counter}>Total: {catalog.total}</div>
